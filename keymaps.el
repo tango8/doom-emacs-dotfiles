@@ -28,3 +28,14 @@
 (map!
  :n "l" #'evil-ex-search-next
  :n "L" #'evil-ex-search-previous)
+
+;; org mode specific remap
+;; universal mappings for org functionalities
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+;; unmaps d due to org specific keymaps
+(after! evil-org
+  (evil-define-key 'normal evil-org-mode-map (kbd "d") nil))
+
