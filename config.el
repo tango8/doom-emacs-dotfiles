@@ -79,7 +79,11 @@
 (load! "keymaps.el")
 
 ;; Fonts:
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 16 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 17)
-      doom-symbol-font (font-spec :family "JetBrainsMono Nerd Font Mono")
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 28))
+(setq doom-font (font-spec :family "Maple Mono NF CN" :size 16 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "Maple Mono NF CN" :size 17)
+      doom-symbol-font (font-spec :family "Maple Mono NF CN")
+      doom-big-font (font-spec :family "Maple Mono NF CN" :size 28))
+
+;; Clipboard stuff
+;; Always use the clipboard for copy/yank and paste
+(setq select-enable-clipboard t)
