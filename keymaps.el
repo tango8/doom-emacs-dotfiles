@@ -1,12 +1,13 @@
 ;;; keymaps.el -*- lexical-binding: t; -*-
-
-(map! :nvo "d" #'evil-backward-char    ;; was h
-      :nvo "h" #'evil-next-line        ;; was j
-      :nvo "t" #'evil-previous-line    ;; was k
+(map! :nvo"d" #'evil-backward-char    ;; was h
+      :nvo "h" #'evil-next-visual-line        ;; was j, also for wrapped multi-line lines to be treated like separate lines
+      :nvo "t" #'evil-previous-visual-line    ;; was k, also for wrapped multi-line lines to be treated like separate lines
       :nvo "n" #'evil-forward-char     ;; was l
       :nvo "H" #'evil-join             ;; delete
       :nvo "j" #'evil-delete
       :nvo "J" #'evil-delete-line
+      :nvo "-" #'evil-end-of-line
+      :nvo "_" #'evil-beginning-of-line
       ;; Ctrl D and Ctrl U recenter
       :nvo [remap evil-scroll-down] (cmd! (evil-scroll-down (/ (window-body-height) 2)) (recenter))
       :nvo [remap evil-scroll-up]   (cmd! (evil-scroll-up (/ (window-body-height) 2)) (recenter))

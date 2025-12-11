@@ -87,3 +87,7 @@
 ;; Clipboard stuff
 ;; Always use the clipboard for copy/yank and paste
 (setq select-enable-clipboard t)
+
+;; Make line wrapped lines treated like separate lines
+(setq evil-respect-visual-line-mode t)
+(global-visual-line-mode 1)
