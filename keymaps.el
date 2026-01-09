@@ -1,5 +1,5 @@
 ;;; keymaps.el -*- lexical-binding: t; -*-
-(map! :nvo"d" #'evil-backward-char    ;; was h
+(map! :nvo "d" #'evil-backward-char    ;; was h
       :nvo "h" #'evil-next-visual-line        ;; was j, also for wrapped multi-line lines to be treated like separate lines
       :nvo "t" #'evil-previous-visual-line    ;; was k, also for wrapped multi-line lines to be treated like separate lines
       :nvo "n" #'evil-forward-char     ;; was l

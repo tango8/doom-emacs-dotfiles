@@ -91,3 +91,6 @@
 ;; Make line wrapped lines treated like separate lines
 (setq evil-respect-visual-line-mode t)
 (global-visual-line-mode 1)
+
+;; Set the path to LanguageTool installation, still haven't installed yet
+(setq langtool-language-tool-jar "~/languagetool/languagetool-commandline.jar")
