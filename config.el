@@ -94,3 +94,9 @@
 
 ;; Set the path to LanguageTool installation, still haven't installed yet
 (setq langtool-language-tool-jar "~/languagetool/languagetool-commandline.jar")
+
+;; Use Aspell default personal dictionary
+(setq ispell-personal-dictionary nil)
+
+;; Set default dictionary (adjust to your Aspell setup, e.g., "en_US" or "english")
+(setq ispell-dictionary "en_US")

@@ -40,3 +40,6 @@
 (after! evil-org
   (evil-define-key 'normal evil-org-mode-map (kbd "d") nil))
 
+(after! evil
+  (map! "Z=" #'ispell-buffer
+        :desc "Spell check buffer"))
