@@ -26,6 +26,11 @@
  :n "s" #'evil-ex
  :n "S" #'evil-ex)
 
+
+(map!
+ :leader
+ "n r u" #'org-roam-ui-mode)
+
 (map!
  :n "l" #'evil-ex-search-next
  :n "L" #'evil-ex-search-previous)
@@ -41,5 +46,6 @@
   (evil-define-key 'normal evil-org-mode-map (kbd "d") nil))
 
 (after! evil
-  (map! "Z=" #'ispell-buffer
+  (map! :n 
+        "Z=" #'ispell-buffer
         :desc "Spell check buffer"))

@@ -40,7 +40,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Notes/")
+(setq org-roam-directory (file-truename "~/Notes/"))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -100,3 +101,24 @@
 
 ;; Set default dictionary (adjust to your Aspell setup, e.g., "en_US" or "english")
 (setq ispell-dictionary "en_US")
+
+;; Roam UI
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :after org-roam ;; or :after org
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+
+;; Make it so it opens on min instead of default browser
+(defun my-orui-open-in-specific-browser (orig-fun &rest args)
+  "Force org-roam-ui to open using a specific browser program."
+  (let ((browse-url-browser-function 'browse-url-generic)
+        (browse-url-generic-program "min-browser")) 
+    (apply orig-fun args)))
+
+(advice-add 'org-roam-ui-open :around #'my-orui-open-in-specific-browser)

@@ -53,3 +53,8 @@
 
 ;; Enable packages
 (package! key-chord)
+
+;; Unpin Doom's built-in org-roam so it pulls the latest version, 
+;; then install the UI package.
+(unpin! org-roam)
+(package! org-roam-ui)
